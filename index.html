@@ -51,15 +51,21 @@
     </nav>
   </header>
 
-  <aside class="debug">
+  <aside class="debug d-flex flex-column">
     <nav>
       <ul>
-        <li class="home my-2"><a href="#">Home</a></li>
-        <li class="stats my-2"><a href="#">Stats</a></li>
-        <li class="signals my-2"><a href="#">Signals</a></li>
+        <li class="my-2">
+          <div class="d-inline"><i class="fa-solid fa-house"></i></div>
+          <a href="#">Home</a></li>
+        <li class="my-2">
+          <div class="d-inline"><i class="fa-solid fa-chart-simple"></i></div>
+          <a href="#">Stats</a></li>
+        <li class="my-2">
+          <div class="d-inline"><i class="fa-solid fa-signal"></i></div>
+          <a href="#">Signals</a></li>
       </ul>
     </nav>
-    <div class="setting">
+    <div class="setting d-flex align-items-center ">
       <ul>
         <li class="admin my-2"><a href="#">Admin</a></li>
       </ul>
@@ -218,7 +224,7 @@
                 </div>
 
                 <!-- Riga 8-->
-                <div class="row mx-2 border_b py-2 fs_s">
+                <div class="row mx-2 mb-4 border_b py-2 fs_s">
                   <div class="col col-6 d-flex">
                     <div class="image debug ">
                       <img src="assets/img/class-avatar.jpg" alt="">
@@ -290,8 +296,63 @@
 
 
             <!-- coloumn right -->
-            <div class="col col-right col-4 debug">
-              
+            <div class="col col-right py-3 col-4 debug">
+
+              <!-- todo  -->
+              <div class="todo border_table mb-4 ">
+                <h4 class="table p-2 m-0 ">Todo</h4>
+                
+                <div class="check border_table m-3">
+
+                  <div class="form-check mx-2 py-2 fs_s border_b">
+                    <input class="form-check-input" type="checkbox" value="" id="kickoff">
+                    <label class="form-check-label" for="kickoff">
+                      Kickoff nuove classi
+                    </label>
+                  </div>
+  
+                  <div class="form-check mx-2 py-2 fs_s border_b">
+                    <input class="form-check-input" type="checkbox" value="" id="bootstrap">
+                    <label class="form-check-label" for="bootstrap">
+                      Lezione su Bootstrap 5 in classe #75
+                    </label>
+                  </div>
+  
+                  <div class="form-check mx-2 py-2 fs_s">
+                    <input class="form-check-input" type="checkbox" value="" id="">
+                    <label class="form-check-label" for="">
+                      Checked checkbox
+                    </label>
+                  </div>
+
+                </div>
+
+              </div>
+              <!-- /todo -->
+
+              <!-- statistics -->
+              <div class="stat border_table">
+                <div class="border_table m-3">
+                  <div class="image mb-2 mx-2 debug">
+                    <img src="assets/img/stats.jpeg" alt="">
+                  </div>
+                  <div class="fs_s px-3 border_b">
+                    <h5>Utenti attivi</h5>
+                    <p>Lista degli utenti attivi in piattaforma nell'ultimo mese</p>
+                  </div>
+                  <div class="fs_s py-2 px-3 border_b">Gennaio: 1200</div>
+
+                  <div class="fs_s py-2 px-3 border_b">Febbraio: 800</div>
+
+                  <div class="fs_s py-2 px-3 border_b">Marzo: 1500</div>
+
+                  <div class="fs_s p-3 border_b">
+                    <a href="">Visualizza report approfondito</a>
+                  </div>
+                </div>
+              </div>
+              <!-- /statistics -->
+
             </div>
             <!-- /coloumn right -->
 
