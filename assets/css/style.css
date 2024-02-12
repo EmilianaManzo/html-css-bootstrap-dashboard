@@ -1,6 +1,13 @@
 :root{
 --header:#ccb2a3;
---section-blu:#1b72e8
+--section-blu:#1b72e8;
+--nav-icon:#5b5858;
+--bell:#ff8f00;
+--bg-form:#e5e5e5;
+--font-form:#757575;
+--aside-bg:#142a40; /*da eliminare */
+--table-title-bg:#f7f7f7;
+--table-border:#dee2e6;
 }
 
 body{
@@ -8,12 +15,151 @@ body{
 }
 
 
+/* Utilities */
+.btn{
+  border: none;
+  background: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+i{
+  padding:15px;
+}
+
+.debug{
+  border: 1px solid red;
+}
+
+.border_table{
+  border: 1px solid var(--table-border);
+  border-radius: 5px;
+}
+
+.border_b{
+  border-bottom: 1px solid var(--table-border);
+}
+
+/* Font utility  */
+.fs_s{
+  font-size: .9rem;
+}
 
 /* Header  */
 header{
   height: 70px;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   color:var(--header);
 }
+
+header .navbar{
+  height: 100%;
+}
+
+form.search{
+  width: 50%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border-radius: 7px;
+  background-color: var(--bg-form) ;
+  color:var(--font-form) ;
+  font-size: .8rem;
+}
+
+.em_search{
+  width: 100%;
+  border: none;
+  border-radius: none;
+  background-color: var(--bg-form);
+}
+
+.em_search:focus {
+  background-color: var(--bg-form);
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+}
+
+.navbar i{
+  color:var(--nav-icon);
+}
+
+.navbar .icon .fa-bell{
+  color: var(--bell);
+}
+
+/* Aside  */
+
+/* TODO:CAMBIARE COLORE  */
+
+aside{
+  width:150px;
+  height: 100vh;
+  margin-top: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:var(--aside-bg);
+  background-image: url(../img/sidebar-bg.png);
+}
+
+aside ul li{
+  list-style: none;
+}
+
+aside li a{
+  text-decoration: none;
+  color: white;
+  
+}
+
+
+/* Main  */
+main{
+  margin-top: 70px;
+  margin-left: 150px;
+  overflow-y: auto;
+}
+
+main .upper{
+  background-color: var(--section-blu);
+}
+main .upper .container,
+main .bottom .container{
+  width: 100%;
+}
+
+main h4.table{
+  background-color:var(--table-title-bg) ;
+  padding: ;
+}
+
+main .next_class .image{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+main .next_class img{
+  width: 100%;
+  object-fit: contain;
+  
+}
+
+
+main .next_class i{
+  padding:7px;
+  color: #6c757d;
+  border: 1px solid #6c757d;
+  border-radius: 3px;
+}
+
+/* Accordion */
+/* TODO: fare il testo blu */
+.em_accordion:focus
