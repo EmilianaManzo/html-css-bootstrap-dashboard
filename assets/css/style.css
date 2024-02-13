@@ -12,6 +12,7 @@
 
 body{
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 
@@ -38,6 +39,16 @@ i{
 
 .border_b{
   border-bottom: 1px solid var(--table-border);
+}
+
+.em_container{
+  width: calc(100vw - 150px );
+  height: calc(100vh - 70px);
+  margin-top: 70px;
+  margin-left: 150px;
+  overflow-x: none;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 /* Font utility  */
@@ -125,6 +136,11 @@ aside{
 aside ul li{
   list-style: none;
   color: white;
+  margin-right: .8rem;
+}
+
+aside ul li:hover{
+  background-color:var(--font-form);
 }
 
 aside li a{
@@ -143,11 +159,8 @@ aside li div{
 
 
 /* Main  */
-main{
-  margin-top: 70px;
-  margin-left: 150px;
-  overflow-y: auto;
-}
+
+
 
 main .upper{
   background-color: var(--section-blu);
@@ -188,3 +201,15 @@ main .next_class i{
 }
 
 /* Statistics */
+
+
+@media screen and (max-width:768px) {
+  aside{
+    width: 70px;
+  }
+
+  .em_container{
+    width: calc(100vw - 70px );
+    margin-left: 70px;
+  }
+} 
