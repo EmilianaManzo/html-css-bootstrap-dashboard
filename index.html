@@ -40,14 +40,14 @@
 
         <div class="icon">
           <form class="d-flex" role="button">
-            <button class="btn d-none d-lg-block"><i class="fa-solid fa-list-ul"></i></button>
+            <button class="btn btn_nav d-none d-lg-block"><i class="fa-solid fa-list-ul"></i></button>
 
-            <button class="btn d-none d-lg-block"><i class="fa-solid fa-circle-question"></i></button>
+            <button class="btn btn_nav d-none d-lg-block"><i class="fa-solid fa-circle-question"></i></button>
 
-            <button class="btn d-none d-lg-block"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <button class="btn btn_nav d-none d-lg-block"><i class="fa-solid fa-ellipsis-vertical"></i></button>
 
             <div class="dropdown">
-              <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bell"></i></button>
+              <button class="btn btn_nav" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bell"></i></button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="#">Profilo</a></li>
                 <li><a class="dropdown-item" href="#">Fatturazione</a></li>
@@ -89,9 +89,135 @@
 
         <section class="upper">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col left col-8 debug">Boolean</div>
-            <div class="col right col-4">Nuovo studente +</div>
+          <div class="row row-cols-1 flex-column-reverse flex-sm-row">
+
+            <div class="col left col-8 debug">
+              <div class="row  text-light">
+                <div class="col-12 col-md-8 py-3 debug">
+                  <div>
+                    <h3 class="d-inline">Boolean</h3>
+                    <span class="badge rounded-pill text-bg-primary em_pill">Piano blaze</span>
+                  </div>
+
+                  <div>
+                    <span class="badge rounded-pill text-bg-primary em_pill">3 app</span>
+                    <span><i class="fa-solid fa-angles-right p-0 "></i></span>
+                    <span class="badge rounded-pill text-bg-primary em_pill">Boolean mobile app</span>
+                    <span class="badge rounded-pill text-bg-primary em_pill">Boolean web app</span>
+                    <span class="badge rounded-pill text-bg-primary em_pill">Boolean blog app</span>
+                  </div>
+
+                </div>
+
+                <div class="col-12 col-md-4 py-3 debug">
+                  <span class="fs_s">Studenti online negli ultimi 30 min</span>
+                  <h4>125</h4>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col right col-4 py-3 text-light nuovo_stud ">
+              <span class="fs_s">Nuovo studente
+                <button type="button" class="btn btn-outline-light em_btn"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-plus"></i></button>
+
+                <div class="offcanvas offcanvas-end offcanv-full" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Inserisci un nuovo utente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+
+                  <!-- offcanvas -->
+                  <div class="offcanvas-body">
+                    <form class="row g-3">
+                    
+                      <!-- nome  -->
+                      <div class="col-6">
+                        <label for="inputEmail4" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="col-6">
+                        <label for="inputPassword4" class="form-label">Cognome</label>
+                        <input type="text" class="form-control" id="inputPassword4">
+                      </div>
+
+
+                      <!-- email  -->
+                      <div class="col-6">
+                        <div class="mb-3">
+                          <label for="basic-url" class="form-label">Email</label>
+                          <div class="input-group">
+                            <span class="input-group-text" id="basic-addon3">@</span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                      <div class="col-6">
+                        <label for="inputPassword4" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                      </div>
+
+                      <!-- indirizzo  -->
+                      <div class="col-12">
+                        <label for="inputAddress" class="form-label">Indirizzo</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="">
+                      </div>
+                      <div class="col-6">
+                        <label for="inputAddress2" class="form-label">Cittá</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="">
+                      </div>
+                      <div class="col-4">
+                        <label for="inputState" class="form-label">Stato</label>
+                        <select id="inputState" class="form-select">
+                          <option selected>Italia</option>
+                          <option>Spagna</option>
+                          <option>Francia</option>
+                          <option>Germania</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Cap</label>
+                        <input type="text" class="form-control" id="inputZip">
+                      </div>
+
+                      <!-- foto  -->
+                      <div class="col-12">
+                        <div class="mb-3">
+                          <label for="formFile" class="form-label">Foto</label>
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                      </div>
+                    
+                      <!-- check -->
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="gridCheck">
+                          <label class="form-check-label" for="gridCheck">
+                            Seleziona per proseguire
+                          </label>
+                        </div>
+                      </div>
+
+
+                        <!-- submit  -->
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Salva</button>
+                        <button type="reset" class="btn btn-warning">Svuota</button>
+                      </div>
+
+                    </form>
+
+                  </div>
+                  <!-- /offcanvas -->
+                </div> 
+              
+
+              </span>
+            </div>
+
           </div>
         </div>
         </section>
@@ -112,9 +238,9 @@
                       <thead>
                         <tr>
                           <th class="text-start">Nome</th>
-                          <th class="w_em">Data inizio</th>
-                          <th class="w_em">ROI</th>
-                          <th class="w_em ">Stato</th>
+                          <th class="w_em d-none d-md-table-cell">Data inizio</th>
+                          <th class="w_em d-none d-md-table-cell">ROI</th>
+                          <th class="w_em">Stato</th>
                           <th class="w_em">Azioni</th>
                         </tr>
                       </thead>
@@ -128,8 +254,8 @@
                             </div>
                             <span> Classe 75</span>
                           </td>
-                          <td>15 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">15 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td><span class="badge text-bg-success">Done</span></td> 
                           <td>
                             <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
@@ -144,8 +270,8 @@
                             </div>
                             <span> Classe 76</span>
                           </td>
-                          <td>16 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">16 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td><span class="badge text-bg-success">Done</span></td> 
                           <td>
                             <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
@@ -160,8 +286,8 @@
                             </div>
                             <span> Classe 77</span>
                           </td>
-                          <td>17 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">17 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td>
                             <span class="badge text-bg-warning text-light">process</span> 
                           <td>
@@ -176,8 +302,8 @@
                             </div>
                             <span> Classe 78</span>
                           </td>
-                          <td>18 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">18 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td><span class="badge text-bg-success">Done</span></td> 
                           <td>
                             <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
@@ -191,8 +317,8 @@
                             </div>
                             <span> Classe 79</span>
                           </td>
-                          <td>19 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">19 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td><span class="badge text-bg-danger">failed</span></td> 
                           <td>
                             <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
@@ -206,8 +332,8 @@
                             </div>
                             <span> Classe 80</span>
                           </td>
-                          <td>20 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">20 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td><span class="badge text-bg-success">Done</span></td> 
                           <td>
                             <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
@@ -221,8 +347,8 @@
                             </div>
                             <span> Classe 81</span>
                           </td>
-                          <td>21 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">21 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td><span class="badge text-bg-danger">failed</span></td> 
                           <td>
                             <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
@@ -236,8 +362,8 @@
                             </div>
                             <span> Classe 82</span>
                           </td>
-                          <td>22 Feb 2021</td>
-                          <td>20%</td>
+                          <td class="d-none d-md-table-cell">22 Feb 2021</td>
+                          <td class="d-none d-md-table-cell">20%</td>
                           <td><span class="badge text-bg-success">Done</span></td> 
                           <td>
                             <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
