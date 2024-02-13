@@ -27,8 +27,11 @@
   <header class=debug>
     <nav class="navbar bg-body-tertiary">
       <div class="container-fluid bg-white ">
-        <a class="navbar-brand">
+        <a class="navbar-brand d-lg-block d-none">
           <img src="assets/img/logo.svg" alt="">
+        </a>
+        <a class="navbar-brand d-lg-none mobile">
+          <img src="assets/img/mobile-logo.png" alt="" class="w-50">
         </a>
         <form class="d-flex search" role="search">
           <i class="fa-solid fa-magnifying-glass"></i>
@@ -37,21 +40,27 @@
 
         <div class="icon">
           <form class="d-flex" role="button">
-            <button class="btn"><i class="fa-solid fa-list-ul"></i></button>
+            <button class="btn d-none d-lg-block"><i class="fa-solid fa-list-ul"></i></button>
 
-            <button class="btn"><i class="fa-solid fa-circle-question"></i></button>
+            <button class="btn d-none d-lg-block"><i class="fa-solid fa-circle-question"></i></button>
 
-            <button class="btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <button class="btn d-none d-lg-block"><i class="fa-solid fa-ellipsis-vertical"></i></button>
 
-            <button class="btn"><i class="fa-solid fa-bell"></i></button>
-
+            <div class="dropdown">
+              <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bell"></i></button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profilo</a></li>
+                <li><a class="dropdown-item" href="#">Fatturazione</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
           </form>
         </div>
       </div>
     </nav>
   </header>
 
-  <aside class="debug d-flex flex-column">
+  <aside class="debug d-flex flex-column justify-content-between ">
     <nav>
       <ul>
         <li class="my-2">
@@ -65,7 +74,7 @@
           <a href="#">Signals</a></li>
       </ul>
     </nav>
-    <div class="setting d-flex align-items-center ">
+    <div class="setting">
       <ul>
         <li class="admin my-2"><a href="#">Admin</a></li>
       </ul>
@@ -91,166 +100,276 @@
             <!-- coloumn left -->
             <div class="col col-left py-3 col-8 debug">
 
-              <!-- next class  -->
-              <div class="next_class border_table mb-4 ">
-                <h4 class="table p-2 m-0 ">Prossime classi</h4>
+              <div class="next_class border_table mb-4">
+                <h4 class="table m-0 p-2 ">Prossime classi</h4>
 
-                <!-- Riga 0 -->
-                <div class="row mx-2 border_b py-2">
-                  <div class="col col-6">Nome</div>
-                  <div class="col col-2">Data inizio</div>
-                  <div class="col col-1">ROI</div>
-                  <div class="col col-1">Stato</div>
-                  <div class="col col-2 text-center">Azioni</div>
-                </div>
+                <div class="w-100 px-2 table-responsive-md overflow-x-hidden ">
+                  <table class="table w-100 table-hover table-sm text-center ">
+                    <thead>
+                      <tr>
+                        <th class="text-start">Nome</th>
+                        <th class="w_em">Data inizio</th>
+                        <th class="w_em">ROI</th>
+                        <th class="w_em">Stato</th>
+                        <th class="w_em">Azioni</th>
+                      </tr>
+                    </thead>
 
-                <!-- Riga 1-->
-                <div class="row mx-2 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 75</span>
-                  </div>
-                  <div class="col col-2">15 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-success">Done</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
-                </div>
+                    <tbody class="fs_s">
 
-                <!-- Riga 2-->
-                <div class="row mx-2 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 76</span>
-                  </div>
-                  <div class="col col-2">16 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-success">Done</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
-                </div>
+                      <tr >
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 75</span>
+                        </td>
+                        <td>15 Feb 2021</td>
+                        <td>20%</td>
+                        <td><span class="badge text-bg-success">Done</span></td> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
 
-                <!-- Riga 3-->
-                <div class="row mx-2 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 77</span>
-                  </div>
-                  <div class="col col-2">17 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-warning text-light">process</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
-                </div>
+                      <tr>
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 76</span>
+                        </td>
+                        <td>16 Feb 2021</td>
+                        <td>20%</td>
+                        <td><span class="badge text-bg-success">Done</span></td> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
 
-                <!-- Riga 4-->
-                <div class="row mx-2 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 78</span>
-                  </div>
-                  <div class="col col-2">18 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-success">Done</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
-                </div>
+                      <tr>
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 77</span>
+                        </td>
+                        <td>17 Feb 2021</td>
+                        <td>20%</td>
+                        <td>
+                          <span class="badge text-bg-warning text-light">process</span> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 78</span>
+                        </td>
+                        <td>18 Feb 2021</td>
+                        <td>20%</td>
+                        <td><span class="badge text-bg-success">Done</span></td> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 79</span>
+                        </td>
+                        <td>19 Feb 2021</td>
+                        <td>20%</td>
+                        <td><span class="badge text-bg-danger">failed</span></td> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 80</span>
+                        </td>
+                        <td>20 Feb 2021</td>
+                        <td>20%</td>
+                        <td><span class="badge text-bg-success">Done</span></td> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 81</span>
+                        </td>
+                        <td>21 Feb 2021</td>
+                        <td>20%</td>
+                        <td><span class="badge text-bg-danger">failed</span></td> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="d-flex">
+                          <div class="image debug ">
+                            <img src="assets/img/class-avatar.jpg" alt="">
+                          </div>
+                          <span> Classe 82</span>
+                        </td>
+                        <td>22 Feb 2021</td>
+                        <td>20%</td>
+                        <td><span class="badge text-bg-success">Done</span></td> 
+                        <td>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-pencil"></i></button>
+                          <button type="button" class="btn btn-outline-secondary"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                      </tr>
 
-                <!-- Riga 5-->
-                <div class="row mx-2 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 79</span>
-                  </div>
-                  <div class="col col-2">20 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-danger">failed</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
-                </div>
+                    
+                    
+                    </tbody>
+                  </table>
 
-                <!-- Riga 6-->
-                <div class="row mx-2 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 80</span>
-                  </div>
-                  <div class="col col-2">21 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-success">Done</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
                 </div>
-
-                <!-- Riga 7-->
-                <div class="row mx-2 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 81</span>
-                  </div>
-                  <div class="col col-2">22 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-danger">failed</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
-                </div>
-
-                <!-- Riga 8-->
-                <div class="row mx-2 mb-4 border_b py-2 fs_s">
-                  <div class="col col-6 d-flex">
-                    <div class="image debug ">
-                      <img src="assets/img/class-avatar.jpg" alt="">
-                    </div>
-                    <span> Classe 82</span>
-                  </div>
-                  <div class="col col-2">23 Feb 2021</div>
-                  <div class="col col-1">20%</div>
-                  <div class="col col-1"><span class="badge text-bg-success">Done</span></div>
-                  <div class="col col-2 text-center">
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-pencil"></i></a></div>
-                    <div class="d-inline-block"><a href=""><i class="fa-solid fa-trash"></i></a></div>
-                  </div>
-                </div>
-                
-              
 
               </div>
               <!-- /next class  -->
+<!-- 
+              <div class="pezzott w-100 px-2 table-responsive-md overflow-x-hidden ">
+                <table class="table w-100 table-hover table-sm text-center">
+                  <thead class="bg-light">
+                    <tr>
+                      <th>Name</th>
+                      <th>Title</th>
+                      <th>Status</th>
+                      <th>Position</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                              src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              class="rounded-circle"
+                              />
+                          <div class="ms-3">
+                            <p class="fw-bold mb-1">John Doe</p>
+                            <p class="text-muted mb-0">john.doe@gmail.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="fw-normal mb-1">Software engineer</p>
+                        <p class="text-muted mb-0">IT department</p>
+                      </td>
+                      <td>
+                        <span class="badge badge-success rounded-pill d-inline">Active</span>
+                      </td>
+                      <td>Senior</td>
+                      <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                              src="https://mdbootstrap.com/img/new/avatars/6.jpg"
+                              class="rounded-circle"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              />
+                          <div class="ms-3">
+                            <p class="fw-bold mb-1">Alex Ray</p>
+                            <p class="text-muted mb-0">alex.ray@gmail.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="fw-normal mb-1">Consultant</p>
+                        <p class="text-muted mb-0">Finance</p>
+                      </td>
+                      <td>
+                        <span class="badge badge-primary rounded-pill d-inline"
+                              >Onboarding</span
+                          >
+                      </td>
+                      <td>Junior</td>
+                      <td>
+                        <button
+                                type="button"
+                                class="btn btn-link btn-rounded btn-sm fw-bold"
+                                data-mdb-ripple-color="dark"
+                                >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+                          <img
+                              src="https://mdbootstrap.com/img/new/avatars/7.jpg"
+                              class="rounded-circle"
+                              alt=""
+                              style="width: 45px; height: 45px"
+                              />
+                          <div class="ms-3">
+                            <p class="fw-bold mb-1">Kate Hunington</p>
+                            <p class="text-muted mb-0">kate.hunington@gmail.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="fw-normal mb-1">Designer</p>
+                        <p class="text-muted mb-0">UI/UX</p>
+                      </td>
+                      <td>
+                        <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
+                      </td>
+                      <td>Senior</td>
+                      <td>
+                        <button
+                                type="button"
+                                class="btn btn-link btn-rounded btn-sm fw-bold"
+                                data-mdb-ripple-color="dark"
+                                >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div> -->
 
               <!-- faq -->
               <div class="faq border_table">
                 <h4 class="table p-2 m-0 ">F.A.Q.</h4>
 
-                <div class="accordion accordion-flush  mx-2" id="accordionExample">
-                  <div class="accordion-item">
+                <div class="accordion accordion-flush mx-2" id="accordionExample">
+                  <div class="accordion-item em_accordion">
                     <h2 class="accordion-header">
                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Come aggiungere un nuovo studente?
@@ -302,7 +421,7 @@
               <div class="todo border_table mb-4 ">
                 <h4 class="table p-2 m-0 ">Todo</h4>
                 
-                <div class="check border_table m-3">
+                <div class=" card check">
 
                   <div class="form-check mx-2 py-2 fs_s border_b">
                     <input class="form-check-input" type="checkbox" value="" id="kickoff">
@@ -331,7 +450,7 @@
               <!-- /todo -->
 
               <!-- statistics -->
-              <div class="stat border_table">
+              <div class="card stat">
                 <div class="border_table m-3">
                   <div class="image mb-2 mx-2 debug">
                     <img src="assets/img/stats.jpeg" alt="">

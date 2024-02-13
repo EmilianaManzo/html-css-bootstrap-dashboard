@@ -49,6 +49,12 @@ img{
   width: 100%;
 }
 
+/* width utility */
+.w_em{
+  width: 100px;
+}
+
+
 /* Header  */
 header{
   height: 70px;
@@ -62,6 +68,11 @@ header{
 
 header .navbar{
   height: 100%;
+}
+
+header .navbar-brand.mobile{
+  width: 90px;
+  text-align: center;
 }
 
 form.search{
@@ -102,18 +113,13 @@ form.search{
 
 aside{
   width:150px;
-  height: 100vh;
+  height: calc(100vh - 70px);
   margin-top: 70px;
   position: fixed;
   top: 0;
   left: 0;
   background-color:var(--aside-bg);
   background-image: url(../img/sidebar-bg.png);
-}
-
-aside nav,
-aside .setting{
-  height: 50%;
 }
 
 aside ul li{
@@ -156,6 +162,7 @@ main h4.table{
   padding: ;
 }
 
+/* next_class */
 main .next_class .image{
   height: 25px;
   width: 25px;
@@ -169,16 +176,15 @@ main .next_class img{
   
 }
 
-
 main .next_class i{
-  padding:7px;
-  color: #6c757d;
-  border: 1px solid #6c757d;
-  border-radius: 3px;
+  padding:4px;
+
 }
 
 /* Accordion */
 /* TODO: fare il testo blu */
-.em_accordion:focus
+.em_accordion:focus{
+  
+}
 
 /* Statistics */
